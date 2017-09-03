@@ -7,7 +7,14 @@
   <div> Default List
     <ul>
     </ul>
+    <button> Add an item </button>
   </div>
-  
+  {{#if addTodo}}
+      {{input placeholder="Enter your todo" value=newTodo}}
+      <br>
+      <button {{action "saveTodo"}}>Save</button> <button {{action      "cancel"}}>cancel</button>
+  {{else}}
+      <button {{action "addTodo"}}>Add todo</button>
+  {{/if}}
 </div>
 {{outlet}}
