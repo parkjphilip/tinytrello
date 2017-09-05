@@ -4,17 +4,29 @@
 <div class="lists-container">
   <h2> Lists </h2>
 
-  <div> Default List
-    <ul>
-    </ul>
-    <button> Add an item </button>
+  <div class="lists">
+
+      {{#each lists as |list idx|}}
+        <div>{{list.title}}</div>
+        <div>{{idx}}</div>
+
+        {{#each list.todos as |todo|}}
+          <div>{{todo}}</div>
+        {{/each}}
+
+        {{#if}} {{addTodo}}{{idx}}
+          {{input placeholder="Enter your todo" value=newTodo}}
+          {{input type="hidden" value=listIndex}}
+
+          <br>
+          <button {{action "saveTodo" idx}}>Save</button>
+          <button {{action "cancel"}}>Cancel</button>
+        {{else}}
+          <button {{action "addTodo" idx}}>Add todo</button>
+        {{/if}}
+      {{/each}}
+
   </div>
-  {{#if addTodo}}
-      {{input placeholder="Enter your todo" value=newTodo}}
-      <br>
-      <button {{action "saveTodo"}}>Save</button> <button {{action      "cancel"}}>cancel</button>
-  {{else}}
-      <button {{action "addTodo"}}>Add todo</button>
-  {{/if}}
+
 </div>
 {{outlet}}

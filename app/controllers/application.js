@@ -1,21 +1,44 @@
 import Ember from 'ember';
 
+// var defaultList = this.store.createRecord('list', {
+//   title: 'Default List'
+// });
+
+
+
 export default Ember.Controller.extend({
-  todos: [],
-  lists: [],
-  
-  actions: {
-    addTodo: function() {
-      debugger
-      this.set('addTodo', true);
+
+  lists: [
+    {
+      title: 'Default List',
+      todos: []
     },
-    saveTodo: function() {
+    {
+      title: 'Default List1',
+      todos: []
+    },
+    {
+      title: 'Default List2',
+      todos: []
+    },
+  ],
+
+
+  actions: {
+    addTodo: function(idx) {
+      debugger
+      this.set(`addTodo${idx}`, true);
+      this.rerender();
+      debugger
+    },
+    saveTodo: function(idx) {
       var todo = this.get('newTodo');
-      this.get('todos').pushObject(todo);
-      this.send('cancel';)
-    }
+      debugger
+      this.get('lists')[idx].todos.push(todo);
+      this.send('cancel');
+    },
     cancel: function() {
-      this.set('addTodo', false);
+      this.set(`addTodo${idx}`, false);
     }
   }
 
