@@ -14,6 +14,7 @@ export default Ember.Component.extend({
       saveTodo: function(idx) {
         var todo = this.get('newTodo');
         this.get('todos').pushObject(todo);
+        this.set('newTodo', '');
         this.send('cancel');
       },
       cancel: function() {
