@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-    store: Ember.inject.service(),
 
+    store: Ember.inject.service(),
     init(){
       this._super(...arguments);
       this.title = this.attrs.title.value;
@@ -15,19 +15,19 @@ export default Ember.Component.extend({
       },
       saveTodo: function() {
           var title = this.get('newTodoTitle');
-          var desc = this.get('newTodoDesc');
-          var store = this.get('store');
-          var newTodo = store.createRecord('todo', {
+          var newTodo = this.get('store').createRecord('todo', {
             title: title,
-            description: desc
+            desc: ""
           });
           this.get('todos').pushObject(newTodo);
           this.set('newTodoTitle', '');
-          this.set('newTodoDesc', '');
           this.send('cancel');
       },
       cancel: function() {
         this.set(`addTodo`, false);
+      },
+      toggleModal: function() {
+        this.toggleProperty('isShowingModal');
       }
     }
 });

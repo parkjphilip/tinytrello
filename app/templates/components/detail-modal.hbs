@@ -1,0 +1,12 @@
+
+<div onclick={{action "toggleModal"}}>{{title}}</div>
+
+{{#if isShowingModal}}
+  {{#modal-dialog onClose="toggleModal"
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    {{title}}
+  {{/modal-dialog}}
+{{/if}}
+
+{{yield}}
