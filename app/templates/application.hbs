@@ -2,9 +2,10 @@
 <h1> Welcome to TinyTrello! </h1>
 
 <div class="lists-container">
+  
   <h2> Lists </h2>
   {{#each model as |list|}}
-    {{todo-list title=list.title todos=list.todos}}
+    {{todo-list title=list.title}}
   {{/each}}
   <button {{action "addList"}}>Add a list...</button>
 

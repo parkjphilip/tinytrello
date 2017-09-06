@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+    store: Ember.inject.service(),
+
     init(){
       this._super(...arguments);
       this.title = this.attrs.title.value;
@@ -11,10 +13,17 @@ export default Ember.Component.extend({
       addTodo: function() {
         this.set(`addTodo`, true);
       },
-      saveTodo: function(event) {
-          var todo = this.get('newTodo');
-          this.get('todos').pushObject(todo);
-          this.set('newTodo', '');
+      saveTodo: function() {
+          var title = this.get('newTodoTitle');
+          var desc = this.get('newTodoDesc');
+          var store = this.get('store');
+          var newTodo = store.createRecord('todo', {
+            title: title,
+            description: desc
+          });
+          this.get('todos').pushObject(newTodo);
+          this.set('newTodoTitle', '');
+          this.set('newTodoDesc', '');
           this.send('cancel');
       },
       cancel: function() {
