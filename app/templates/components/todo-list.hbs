@@ -5,13 +5,12 @@
 {{/each}}
 
 {{#if addTodo}}
-  {{input placeholder="Enter your todo" value=newTodo}}
-
+  {{input on="enter" action="saveTodo" placeholder="Type something..." value=newTodo}}
   <br>
   <button {{action "saveTodo"}}>Save</button>
   <button {{action "cancel"}}>Cancel</button>
 {{else}}
-  <button {{action "addTodo"}}>Add todo</button>
+  <button {{action "addTodo"}}>Add an item...</button>
 {{/if}}
 
 

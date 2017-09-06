@@ -11,11 +11,11 @@ export default Ember.Component.extend({
       addTodo: function() {
         this.set(`addTodo`, true);
       },
-      saveTodo: function(idx) {
-        var todo = this.get('newTodo');
-        this.get('todos').pushObject(todo);
-        this.set('newTodo', '');
-        this.send('cancel');
+      saveTodo: function(event) {
+          var todo = this.get('newTodo');
+          this.get('todos').pushObject(todo);
+          this.set('newTodo', '');
+          this.send('cancel');
       },
       cancel: function() {
         this.set(`addTodo`, false);
