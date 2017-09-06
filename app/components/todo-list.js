@@ -4,7 +4,7 @@ export default Ember.Component.extend({
     init(){
       this._super(...arguments);
       this.title = this.attrs.title.value;
-      this.todos = this.attrs.todos.value;
+      this.todos = [];
     },
 
     actions: {
