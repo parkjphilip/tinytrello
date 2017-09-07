@@ -1,17 +1,21 @@
 
-<div onclick={{action "toggleModal"}} class="todo-title">{{title}}</div>
+
+<div onclick={{action "toggleModal"}} class="todo-title hover">{{title}}</div>
 
 {{#if isShowingModal}}
   {{#modal-dialog onClose="toggleModal"
                   targetAttachment="center"
-                  translucentOverlay=true}}
-    <div>
+                  translucentOverlay=true
+                  containerClass="detail-modal"}}
+    <div class="modal-top">
       <div>{{title}}</div>
-      <button {{action "toggleModal"}}>Close</button>
-      <button {{action "delete"}}>Delete</button>
+      <div class="modal-top-right">
+        <a class="close-modal hover"{{action "toggleModal"}}>Close</a>
+        <a class="delete-task hover"{{action "delete"}}>Delete</a>
+      </div>
     </div>
-    <div>
-      {{textarea value=desc}}
+    <div class="modal-bottom">
+      {{textarea rows="10" cols="54" value=desc}}
     </div>
   {{/modal-dialog}}
 {{/if}}

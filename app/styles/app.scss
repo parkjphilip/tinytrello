@@ -29,7 +29,7 @@
 
 #bottom-section {
   background-color: #0079BF;
-  height: 760px;
+  min-height: 760px;
 }
 
 #lists-title {
@@ -41,10 +41,9 @@
 
 #lists-container {
   width: 95%;
-  // height: 660px;
-  // border: 1px solid green;
   display: flex;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .list {
@@ -78,11 +77,27 @@
 .add-task {
   padding-left: 10px;
   color: #1155CC;
+  text-decoration: underline;
+}
+
+.add-list {
+  margin-top: 60px;
+  margin-left: 30px;
+  font-size: 25px;
+  color: white;
+  height: 25px;
+  text-decoration: underline;
+  // border: 1px solid white;
+}
+
+.add-list:hover {
+  color: black;
 }
 
 .add-task:hover {
   color: black;
 }
+
 .hover {
   cursor: pointer;
 }
@@ -112,7 +127,45 @@
   min-height: 20px;
   background-color: white;
   text-align: center;
-  // display: flex;
-  // align-items: center;
+}
 
+.todo-title:hover {
+  background-color: #0079BF;
+  color: white;
+}
+
+.detail-modal {
+  width: 700px;
+  min-height: 150px;
+}
+
+.modal-top {
+  display: flex;
+  height: 30px;
+  border-bottom: 1px solid black;
+}
+
+.modal-top-right {
+  position: relative;
+  left: 570px;
+}
+
+.modal-bottom {
+  margin: 10px;
+}
+
+.ember-text-area {
+  font-size: 25px;
+}
+
+.close-modal, .delete-task {
+  color: #1155CC;
+  text-decoration: underline;
+}
+
+.close-modal {
+  margin-right: 10px;
+}
+.close-modal:hover, .delete-task:hover {
+  color: black;
 }

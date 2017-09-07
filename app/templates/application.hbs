@@ -8,11 +8,9 @@
     <div id="lists-container">
 
       {{#each model as |list idx|}}
-        <div class="list">
           {{todo-list todoList=list title=list.title listIdx=idx delete=(action "deleteTodo")}}
-        </div>
       {{/each}}
-      <a {{action "addList"}}>Add a list...</a>
+      <a class="add-list hover"{{action "addList"}}>Add a list...</a>
 
     </div>
   </div>
