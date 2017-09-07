@@ -8,6 +8,10 @@ export default Ember.Controller.extend({
         title: 'User Added list'
       });
       lists.pushObject(newList);
+    },
+    deleteTodo: function(listIdx, todoIdx) {
+      debugger
+      this.get('model')[listIdx].todos.removeAt(todoIdx);
     }
   }
 });

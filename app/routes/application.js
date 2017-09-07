@@ -4,10 +4,10 @@ export default Ember.Route.extend({
   model: function(){
     let lists = [];
     var defaultList = this.store.createRecord('list', {
-      title: 'Default List'
+      title: 'Default List',
+      todos: []
     });
     lists.pushObject(defaultList);
     return lists;
-  }
-
+  },
 });

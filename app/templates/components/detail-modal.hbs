@@ -5,7 +5,14 @@
   {{#modal-dialog onClose="toggleModal"
                   targetAttachment="center"
                   translucentOverlay=true}}
-    {{title}}
+    <div>
+      <div>{{title}}</div>
+      <button {{action "toggleModal"}}>Close</button>
+      <button {{action "delete"}}>Delete</button>
+    </div>
+    <div>
+      <div>{{desc}}</div>
+    </div>
   {{/modal-dialog}}
 {{/if}}
 

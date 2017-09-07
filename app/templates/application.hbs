@@ -4,8 +4,8 @@
 <div class="lists-container">
 
   <h2> Lists </h2>
-  {{#each model as |list|}}
-    {{todo-list title=list.title}}
+  {{#each model as |list idx|}}
+    {{todo-list todoList=list title=list.title listIdx=idx delete=(action "deleteTodo")}}
   {{/each}}
   <button {{action "addList"}}>Add a list...</button>
 
