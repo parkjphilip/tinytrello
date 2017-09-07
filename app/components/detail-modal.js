@@ -9,7 +9,6 @@ export default Ember.Component.extend({
     this.desc = this.attrs.desc.value;
     this.listIdx = this.attrs.listIdx.value;
     this.todoIdx = this.attrs.todoIdx.value;
-    this.delete = this.attrs.delete;
   },
 
   actions: {
@@ -22,7 +21,6 @@ export default Ember.Component.extend({
       this.attrs.delete(listIdx, todoIdx);
     },
     editDesc: function() {
-      debugger
       this.get('desc');
     }
   }

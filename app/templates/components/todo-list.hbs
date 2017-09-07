@@ -1,4 +1,6 @@
-{{title}}
+<div class="list-title">
+  {{title}}
+</div>
 <br>
 {{#each todos as |todo idx|}}
   {{detail-modal title=todo.title desc=todo.desc delete=attrs.delete listIdx=attrs.listIdx todoIdx=idx}}
@@ -6,12 +8,14 @@
 
 
 {{#if addTodo}}
-  {{input enter="saveTodo" placeholder="Type something..." value=newTodoTitle}}
+    {{input class="todo-title-input" enter="saveTodo" placeholder="Type something..." value=newTodoTitle}}
   <br>
-  <button {{action "saveTodo"}}>Save</button>
-  <button {{action "cancel"}}>Cancel</button>
+  <button class="save-task hover"{{action "saveTodo"}}>Save</button>
+  <button class="cancel-task hover"{{action "cancel"}}>Cancel</button>
 {{else}}
-  <button {{action "addTodo"}}>Add an item...</button>
+  <div class="add-task-container">
+    <a class="add-task hover"{{action "addTodo"}}>Add an item...</a>
+  </div>
 {{/if}}
 
 

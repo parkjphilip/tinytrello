@@ -1,2 +1,118 @@
 @import "ember-modal-dialog/ember-modal-structure";
 @import "ember-modal-dialog/ember-modal-appearance";
+
+* {
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#app-wrapper {
+  width: 100%;
+  height: 800px;
+  border: 1px solid black;
+  position: relative;
+}
+
+#title, #lists-title, #lists-container {
+  position: relative;
+  margin: 0 auto;
+}
+
+#top-section {
+  background-color: #0067A3;
+}
+
+#title {
+  height: 40px;
+  width: 360px;
+  color: #7FB3D1;
+}
+
+#bottom-section {
+  background-color: #0079BF;
+  height: 760px;
+}
+
+#lists-title {
+  height: 30px;
+  width: 55px;
+  color: white;
+  padding-top: 10px;
+}
+
+#lists-container {
+  width: 95%;
+  // height: 660px;
+  // border: 1px solid green;
+  display: flex;
+  margin-top: 10px;
+}
+
+.list {
+  margin: 10px;
+  border: 1px solid pink;
+  width: 300px;
+  background-color: #E2E4E6;
+  min-height: 150px;
+  border-radius: 10px;
+}
+
+.list-title {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 10px;
+  border-bottom: 1px solid black;
+}
+
+.todo-title-input,
+.todo-title-input::-webkit-input-placeholder {
+  margin-left: 10px;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.add-task-container {
+  width: 300px;
+  height: 30px;
+}
+.add-task {
+  padding-left: 10px;
+  color: #1155CC;
+}
+
+.add-task:hover {
+  color: black;
+}
+.hover {
+  cursor: pointer;
+}
+.save-task {
+  margin-top: 10px;
+  margin-left: 100px;
+  width: 60px;
+  height: 30px;
+  background-color: #61BD4F;
+  color: white;
+  border: 1px solid #61BD4F;
+  font-size: 15px;
+}
+
+.cancel-task {
+  width: 60px;
+  height: 30px;
+  background-color: #61BD4F;
+  color: white;
+  border: 1px solid #61BD4F;
+  font-size: 15px;
+}
+
+.todo-title {
+  margin: 0 10px 10px 10px;
+  font-size: 20px;
+  min-height: 20px;
+  background-color: white;
+  text-align: center;
+  // display: flex;
+  // align-items: center;
+
+}

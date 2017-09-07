@@ -1,5 +1,5 @@
 
-<div onclick={{action "toggleModal"}}>{{title}}</div>
+<div onclick={{action "toggleModal"}} class="todo-title">{{title}}</div>
 
 {{#if isShowingModal}}
   {{#modal-dialog onClose="toggleModal"
