@@ -20,6 +20,10 @@ export default Ember.Component.extend({
       let listIdx = this.attrs.listIdx;
       let todoIdx = this.attrs.todoIdx;
       this.attrs.delete(listIdx, todoIdx);
+    },
+    editDesc: function() {
+      debugger
+      this.get('desc');
     }
   }
 });
