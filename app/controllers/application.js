@@ -5,12 +5,12 @@ export default Ember.Controller.extend({
     addList: function(){
       var lists = this.get('model');
       var newList = this.store.createRecord('list', {
-        title: 'User Added list'
+        title: 'User Added list',
+        todos: []
       });
       lists.pushObject(newList);
     },
     deleteTodo: function(listIdx, todoIdx) {
-      debugger
       this.get('model')[listIdx].todos.removeAt(todoIdx);
     }
   }

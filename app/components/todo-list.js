@@ -6,7 +6,6 @@ export default Ember.Component.extend({
     init(){
       this._super(...arguments);
       this.title = this.attrs.title.value;
-      debugger
       this.todos = this.attrs.todoList.todos;
     },
 
