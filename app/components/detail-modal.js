@@ -19,13 +19,12 @@ export default Ember.Component.extend({
     toggleDeleteModal: function() {
       this.toggleProperty('isShowingDeleteModal');
     },
+    // call the delete method with the current list index and task index,
+    // which have all been passed down
     delete: function() {
       let listIdx = this.attrs.listIdx;
       let todoIdx = this.attrs.todoIdx;
       this.attrs.delete(listIdx, todoIdx);
-    },
-    editDesc: function() {
-      this.get('desc');
     }
   }
 });

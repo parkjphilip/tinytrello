@@ -13,6 +13,8 @@ export default Ember.Component.extend({
       addTodo: function() {
         this.set(`addTodo`, true);
       },
+      // create a new task with the inputted title, initializing it with an
+      // empty string for description - push it to the current list's todos
       saveTodo: function() {
           var title = this.get('newTodoTitle');
           var newTodo = this.get('store').createRecord('todo', {
