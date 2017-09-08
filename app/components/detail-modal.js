@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   isShowingModal: false,
+  isShowingDeleteModal: false,
 
   init(){
     this._super(...arguments);
@@ -14,6 +15,9 @@ export default Ember.Component.extend({
   actions: {
     toggleModal: function() {
       this.toggleProperty('isShowingModal');
+    },
+    toggleDeleteModal: function() {
+      this.toggleProperty('isShowingDeleteModal');
     },
     delete: function() {
       let listIdx = this.attrs.listIdx;
