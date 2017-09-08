@@ -139,15 +139,21 @@
   min-height: 150px;
 }
 
+.modal-title {
+  width: 300px;
+  font-size: 15px;
+}
 .modal-top {
   display: flex;
   height: 30px;
   border-bottom: 1px solid black;
+  padding-bottom: 10px;
 }
 
 .modal-top-right {
   position: relative;
-  left: 570px;
+  left: 270px;
+  padding-top: 5px;
 }
 
 .modal-bottom {

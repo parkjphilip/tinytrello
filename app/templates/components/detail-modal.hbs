@@ -8,7 +8,7 @@
                   translucentOverlay=true
                   containerClass="detail-modal"}}
     <div class="modal-top">
-      <div>{{title}}</div>
+      {{input class="modal-title" value=title}}
       <div class="modal-top-right">
         <a class="close-modal hover"{{action "toggleModal"}}>Close</a>
         <a class="delete-task hover"{{action "delete"}}>Delete</a>
